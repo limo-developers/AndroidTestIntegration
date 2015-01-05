@@ -11,6 +11,6 @@ public class UserTest {
     @Test
     public void testShouldHave10Length() {
         User user = new User();
-        Assert.assertEquals(10, user.getLength());
+        Assert.assertEquals(0, user.getLength());
     }
 }

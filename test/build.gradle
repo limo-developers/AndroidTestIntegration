@@ -13,7 +13,7 @@ sourceSets {
 
     test {
         java {
-          srcDir '../app/src/mainTest'
+          srcDir './mainTest'
         }
     }
 }
