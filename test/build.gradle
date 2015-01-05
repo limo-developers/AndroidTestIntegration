@@ -1,4 +1,6 @@
+apply plugin: "application"
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 repositories {
     jcenter()
@@ -20,4 +22,15 @@ sourceSets {
 
 dependencies {
     testCompile "junit:junit:4.11"
+}
+
+jacoco {
+    applyTo run
+    toolVersion = "0.7.1.201405082137"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+task applicationCodeCoverageReport(type:JacocoReport){
+    executionData run
+    sourceSets sourceSets.main
 }
