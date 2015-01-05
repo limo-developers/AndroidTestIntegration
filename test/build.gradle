@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+sourceSets {
+    main {
+        java {
+          srcDir '../app/src/main'
+          resources '../app/src/main/res'
+        }
+    }
+
+    test {
+        java {
+          srcDir '../app/src/mainTest'
+          resources '../app/src/main/res'
+        }
+    }
+}
+
+dependencies {
+    compile project(':app')
+    testCompile "junit:junit:4.11"
+}
