@@ -17,3 +17,5 @@ proguard/
 /.idea/workspace.xml
 /.idea/libraries
 ./test_reports
+./test/test_reports
+*.iml

@@ -1,9 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'cobertura'
-
-group = 'com.limotaxi.androidtestintegration'
-version = '1.0.0-SNAPSHOT'
-description = """Sample project with Spock tests and Cobertura code coverage"""
+apply plugin: 'idea'
 
 buildscript {
     repositories {
@@ -23,19 +20,20 @@ repositories {
 sourceSets {
     main {
         java {
-          srcDir '../app/src/main/java/com/limotaxi/androidtestintegration/model'
+            srcDir '../app/src/main/java/com/limotaxi/androidtestintegration/model'
         }
     }
-
     test {
         java {
-          srcDir './mainTest'
+            srcDir './mainTest/java'
         }
     }
 }
 
 dependencies {
+    compile project(':app')
     compile 'org.codehaus.groovy:groovy-all:2.2.1'
+
     testCompile 'cglib:cglib-nodep:2.2'
     testCompile 'org.objenesis:objenesis:1.2'
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
@@ -43,13 +41,15 @@ dependencies {
 }
 
 cobertura {
-    rootProject.subprojects.each {
-        coverageDirs << file("./app/build/classes/main")
-    }
     coverageFormats = ['html', 'xml']
     coverageIgnoreTrivial = true
     coverageIgnores = ['org.slf4j.Logger.*']
-    coverageReportDir = new File("$buildDir/reports/cobertura")
+    coverageReportDir = new File("./test_reports/cobertura")
 }
 
+test {
+//    testClassesDir = file('../app/build/intermediates/classes/release/com/limotaxi/androidtestintegration/model/*.class')
+}
+
+test.reports.html.destination = file("../test_reports/test")
 test.finalizedBy(project.tasks.cobertura)
