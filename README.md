@@ -1,4 +1,6 @@
 AndroidTestIntegration
 ======================
 
-android test integration(emma, androidspock, espresso, junit)
+android test integration(junit, espresso, cobertura)
+
+for android studio
