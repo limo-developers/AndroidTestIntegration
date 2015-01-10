@@ -8,7 +8,7 @@ public class AdminTest {
     @Test
     public void testShouldAdminNameIsAdmin() {
         Admin admin = new Admin();
-        // I want to fail a this test.
+        // I want to fail this test.
         Assert.assertEquals("passenger", admin.getName());
     }
 }
