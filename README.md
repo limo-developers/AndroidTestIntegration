@@ -22,6 +22,8 @@ How to use
 * After unit test, you can see reports at ```${projectDir}/test_reports```
 * There are two reports. 1. JUnit, 2. Coverage
 
+![Junit](https://raw.githubusercontent.com/limo-developers/AndroidTestIntegration/master/screenshots/junit_reports.png)
+![Cobertura](https://raw.githubusercontent.com/limo-developers/AndroidTestIntegration/master/screenshots/cobertura.png)
 
 ###### Run android UI test using espresso
 ```
