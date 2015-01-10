@@ -30,6 +30,16 @@ How to use
 ./gradle connectedAndroidTest
 ```
 
+###### Run junit with debugger
+If you want to run test with debugger, you must to using gradle option as a ```-Dtest.debug```.
+- Execute gradle using terminal. ```./gradlew test -Dtest.debug ```
+- You can see the message like that ```Listening for transport dt_socket at address: 5005```
+- Open the android_studio(intellij, eclipse) and make new configurations. (see the below picture)
+- Run!
+![configuration](https://raw.githubusercontent.com/limo-developers/AndroidTestIntegration/master/screenshots/configuration.png)
+
+
+
 Developed By
 ============
 
